@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzgLSbmgYxJMTJcUwssl1hmgjJjLsURQsWjg&s" alt="Security Image" class="security-image">
+        <p>This page is protected. You are logged in.</p>
+        <p><strong>Importance of Security in Daily Life:</strong></p>
+        <p>Security is vital in our everyday lives. It ensures that our personal information, assets, and well-being are safeguarded. From online transactions to physical safety, security measures help us mitigate risks and prevent unauthorized access.</p>
+        <p>In today's digital age, cyber security has become increasingly important. Protecting our personal data from breaches is crucial for maintaining privacy and trust. Additionally, physical security, such as locks and surveillance systems, protects our homes and workplaces.</p>
+        <button id="logout-btn">Logout</button>
+    </div>
+
+    <script>
+        // Check if user is logged in
+        if (!localStorage.getItem('loggedIn')) {
+            alert('You must log in first.');
+            window.location.href = 'index.html';
+        }
+
+        // Logout function
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('loggedIn');
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
